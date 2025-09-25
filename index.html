@@ -1,76 +1,422 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Partow Roshani - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Partow Roshani — Portfolio</title>
+
+  <!-- SEO -->
+  <meta name="description" content="CS student building real-time, scalable chat apps. Java, JavaFX, PostgreSQL, sockets, concurrency." />
+  <meta name="author" content="Partow Roshani" />
+  <meta property="og:title" content="Partow Roshani — Portfolio" />
+  <meta property="og:description" content="Real-time systems, scalable chat apps, JavaFX, PostgreSQL." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://partowroshani.github.io/portfolio/" />
+
+  <style>
+    /* ====== THEME TOKENS ====== */
+    :root {
+      --bg: #0b0c10;
+      --panel: #111319;
+      --text: #e9ecf1;
+      --muted: #b3b9c4;
+      --brand: #5aa9e6;
+      --brand-2: #7fc8f8;
+      --border: #1d2230;
+      --chip-bg: #182033;
+      --shadow: 0 8px 28px rgba(0,0,0,.28);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f6f7fb;
+        --panel: #ffffff;
+        --text: #16181d;
+        --muted: #5b6474;
+        --brand: #2563eb;
+        --brand-2: #3b82f6;
+        --border: #e6e8ef;
+        --chip-bg: #eef2ff;
+        --shadow: 0 10px 36px rgba(16,24,40,.08);
+      }
+    }
+    [data-theme="light"] {
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --text: #16181d;
+      --muted: #5b6474;
+      --brand: #2563eb;
+      --brand-2: #3b82f6;
+      --border: #e6e8ef;
+      --chip-bg: #eef2ff;
+      --shadow: 0 10px 36px rgba(16,24,40,.08);
+    }
+    [data-theme="dark"] {
+      --bg: #0b0c10;
+      --panel: #111319;
+      --text: #e9ecf1;
+      --muted: #b3b9c4;
+      --brand: #5aa9e6;
+      --brand-2: #7fc8f8;
+      --border: #1d2230;
+      --chip-bg: #182033;
+      --shadow: 0 8px 28px rgba(0,0,0,.28);
+    }
+
+    /* ====== BASE ====== */
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; background:var(--bg); color:var(--text); }
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, "Noto Sans";
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width:min(1140px, 92%); margin:0 auto; }
+
+    /* ====== HEADER/NAV ====== */
+    header {
+      position: sticky; top:0; z-index:40;
+      backdrop-filter: saturate(120%) blur(10px);
+      background: color-mix(in oklab, var(--bg) 85%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+    }
+    .brand { display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px; }
+    .brand .dot {
+      width:10px; height:10px; border-radius:999px; background:var(--brand-2);
+      box-shadow: 0 0 0 4px color-mix(in oklab, var(--brand-2) 25%, transparent);
+    }
+    .nav-actions { display:flex; gap:8px; align-items:center; }
+    .btn {
+      display:inline-flex; align-items:center; gap:8px; cursor:pointer;
+      padding:9px 12px; border:1px solid var(--border); border-radius:10px;
+      background: color-mix(in oklab, var(--panel) 92%, black 0%);
+      color: var(--text); font-weight:700; font-size:13px;
+      transition: transform .06s ease, filter .2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: var(--brand); color:#fff; border-color: color-mix(in oklab, var(--brand) 70%, var(--border));
+      box-shadow: var(--shadow);
+    }
+
+    /* ====== HERO ====== */
+    .hero {
+      display:grid; grid-template-columns: 112px 1fr; gap:20px; align-items:center;
+      padding:28px 0;
+    }
+    .avatar {
+      width:112px; height:112px; border-radius:18px; object-fit:cover;
+      border:1px solid var(--border); box-shadow: var(--shadow); background:#ccc;
+    }
+    h1 { font-size: clamp(26px, 3.4vw, 38px); margin:4px 0 6px; }
+    .subtitle { color:var(--muted); margin:8px 0 14px; }
+    .hero-ctas { display:flex; gap:10px; flex-wrap:wrap; }
+
+    /* ====== SECTIONS ====== */
+    section.block {
+      margin:18px 0 26px; padding:22px;
+      background: var(--panel); border:1px solid var(--border); border-radius:16px;
+      box-shadow: var(--shadow);
+    }
+    section.block h2 { margin:0 0 14px; font-size:20px; letter-spacing:.2px; }
+
+    /* ====== GRID / CARDS ====== */
+    .grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+    .col-6 { grid-column: span 6; }
+    .col-12 { grid-column: span 12; }
+    @media (max-width: 880px){ .col-6 { grid-column: span 12; } }
+
+    .card {
+      padding:18px; border:1px solid var(--border); border-radius:14px;
+      background: color-mix(in oklab, var(--panel) 92%, black 0%);
+    }
+    .card h3 { margin:0 0 8px; font-size:18px; }
+    .card p { margin:6px 0 12px; color:var(--muted); }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .chip {
+      font-size:12px; padding:6px 10px; border-radius:999px;
+      background: var(--chip-bg);
+      border:1px solid color-mix(in oklab, var(--border) 65%, var(--chip-bg));
+      color: color-mix(in oklab, var(--text) 80%, var(--muted));
+    }
+    .card-actions { display:flex; gap:10px; flex-wrap:wrap; }
+
+    /* ====== SKILLS ====== */
+    .skills { display:flex; flex-wrap:wrap; gap:8px; }
+    .badge {
+      padding:8px 12px; border-radius:10px; border:1px solid var(--border);
+      background: color-mix(in oklab, var(--panel) 92%, black 0%);
+      font-weight:700; font-size:13px;
+    }
+
+    /* ====== FOOTER ====== */
+    footer { color:var(--muted); padding:30px 0 60px; text-align:center; }
+
+    /* ====== RTL helpers ====== */
+    [dir="rtl"] .hero { grid-template-columns: 1fr 112px; }
+    [dir="rtl"] .hero .avatar { order:2; }
+    [dir="rtl"] .hero > div { order:1; text-align:right; }
+    [dir="rtl"] .nav { direction: rtl; }
+    [dir="rtl"] .nav-actions { direction: ltr; } /* دکمه‌ها چپ به راست بمونن */
+  </style>
 </head>
 <body>
-
-  <!-- Header -->
+  <!-- ====== NAVBAR ====== -->
   <header>
-    <img src="assets/profile.jpg" alt="Profile Photo" class="profile-pic">
-    <h1>Partow Roshani</h1>
-    <h2>Computer Science Student @ Shahid Beheshti University</h2>
-    <p>Passionate about scalable chat apps, real-time systems, and software engineering.</p>
+    <div class="container nav">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Partow Roshani</span>
+      </div>
+      <div class="nav-actions">
+        <button id="langBtn" class="btn" type="button" aria-label="Switch language">FA</button>
+        <button id="themeBtn" class="btn" type="button" aria-label="Toggle theme">Auto</button>
+        <a class="btn btn-primary" href="mailto:roshanipartow@gmail.com">Contact</a>
+      </div>
+    </div>
   </header>
 
-  <!-- About -->
-  <section id="about">
-    <h3>About Me</h3>
-    <p>
-      I am a B.Sc. Computer Science student (3rd semester) with strong interests in 
-      real-time systems, concurrency, and distributed applications. 
-      I enjoy building impactful software and exploring new technologies.
-    </p>
-  </section>
+  <main class="container">
+    <!-- ========== ENGLISH ========== -->
+    <div id="lang-en">
+      <section class="block">
+        <div class="hero">
+          <img class="avatar" src="assets/profile.jpg" alt="Profile photo" />
+          <div>
+            <h1>Computer Science Student @ Shahid Beheshti University (Melli)</h1>
+            <p class="subtitle">
+              Building <strong>scalable chat applications</strong> & <strong>real-time systems</strong>. Java, JavaFX, PostgreSQL, sockets, concurrency.
+            </p>
+            <div class="hero-ctas">
+              <a class="btn btn-primary" href="assets/PartowRoshani-Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+              <a class="btn" href="https://github.com/PartowRoshani" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn" href="https://www.linkedin.com/in/partow-roshani" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <!-- Projects -->
-  <section id="projects">
-    <h3>Projects</h3>
+      <section id="projects" class="block" aria-label="Projects">
+        <h2>Projects</h2>
+        <div class="grid">
+          <article class="card col-6">
+            <h3>Telegram-like Messaging App</h3>
+            <p>JavaFX client + socket-based real-time messaging with groups, channels, private chat, and PostgreSQL backend.</p>
+            <div class="chips">
+              <span class="chip">Java</span><span class="chip">JavaFX</span><span class="chip">PostgreSQL</span><span class="chip">Sockets</span><span class="chip">Concurrency</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://github.com/yourusername/telegram-clone" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </article>
 
-    <div class="project-card">
-      <h4>Telegram-like Messaging App</h4>
-      <p>Built with JavaFX, PostgreSQL, and socket-based real-time event handling.</p>
-      <a href="https://github.com/yourusername/telegram-clone" target="_blank">View on GitHub</a>
+          <article class="card col-6">
+            <h3>Restaurant Ordering System</h3>
+            <p>Menu, cart, order flow with JavaFX UI & PostgreSQL. Includes authentication and order tracking.</p>
+            <div class="chips">
+              <span class="chip">JavaFX</span><span class="chip">PostgreSQL</span><span class="chip">OOP</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://github.com/yourusername/restaurant-system" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </article>
+
+          <article class="card col-6">
+            <h3>Genius-like Music Platform</h3>
+            <p>OOP design with users, artists, admins; lyrics features; follows & feeds; Java backend scaffolding.</p>
+            <div class="chips">
+              <span class="chip">Java</span><span class="chip">OOP</span><span class="chip">MVC</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://github.com/yourusername/music-platform" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </article>
+
+          <article class="card col-6">
+            <h3>Typing Test (Concurrency)</h3>
+            <p>Adaptive timers, multi-threaded input, live stats and reports; Java concurrency primitives.</p>
+            <div class="chips">
+              <span class="chip">Concurrency</span><span class="chip">Threads</span><span class="chip">Java</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://github.com/yourusername/typing-test" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="block" aria-label="Skills">
+        <h2>Skills</h2>
+        <div class="skills">
+          <span class="badge">Java</span><span class="badge">C++</span><span class="badge">Python</span>
+          <span class="badge">PostgreSQL</span><span class="badge">JavaFX</span><span class="badge">Git</span>
+          <span class="badge">Maven/Gradle</span><span class="badge">OOP</span><span class="badge">Concurrency</span><span class="badge">Networking</span>
+        </div>
+      </section>
+
+      <section id="about" class="block" aria-label="About">
+        <h2>About</h2>
+        <p>
+          I’m a B.Sc. Computer Science student (3rd semester) at Shahid Beheshti University (Melli), focused on real-time systems and scalable applications.
+          I enjoy building impactful software and exploring distributed systems, databases, and user-centric design.
+        </p>
+      </section>
+
+      <section id="contact" class="block" aria-label="Contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:roshanipartow@gmail.com">roshanipartow@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/partow-roshani" target="_blank" rel="noopener">linkedin.com/in/partow-roshani</a></p>
+        <p>GitHub: <a href="https://github.com/PartowRoshani" target="_blank" rel="noopener">github.com/PartowRoshani</a></p>
+      </section>
     </div>
 
-    <div class="project-card">
-      <h4>Restaurant Ordering System</h4>
-      <p>JavaFX + PostgreSQL project with GUI menu, cart, and order tracking.</p>
-      <a href="https://github.com/yourusername/restaurant-system" target="_blank">View on GitHub</a>
+    <!-- ========== PERSIAN ========== -->
+    <div id="lang-fa" dir="rtl" style="display:none;">
+      <section class="block">
+        <div class="hero">
+          <div>
+            <h1>دانشجوی علوم کامپیوتر در دانشگاه شهید بهشتی (ملی)</h1>
+            <p class="subtitle">
+              توسعه‌دهنده‌ی <strong>اپلیکیشن‌های چت مقیاس‌پذیر</strong> و <strong>سیستم‌های بلادرنگ</strong>. Java, JavaFX, PostgreSQL, سوکت، هم‌زمانی.
+            </p>
+            <div class="hero-ctas" style="justify-content:flex-start">
+              <a class="btn btn-primary" href="assets/PartowRoshani-Resume.pdf" target="_blank" rel="noopener">دانلود رزومه</a>
+              <a class="btn" href="https://github.com/PartowRoshani" target="_blank" rel="noopener">گیت‌هاب</a>
+              <a class="btn" href="https://www.linkedin.com/in/partow-roshani" target="_blank" rel="noopener">لینکدین</a>
+            </div>
+          </div>
+          <img class="avatar" src="assets/profile.jpg" alt="عکس پروفایل" />
+        </div>
+      </section>
+
+      <section id="projects-fa" class="block" aria-label="پروژه‌ها">
+        <h2>پروژه‌ها</h2>
+        <div class="grid">
+          <article class="card col-6">
+            <h3>پیام‌رسان شبیه تلگرام</h3>
+            <p>کلاینت JavaFX + پیام‌رسانی بلادرنگ مبتنی بر سوکت با گروه، کانال، چت خصوصی و دیتابیس PostgreSQL.</p>
+            <div class="chips">
+              <span class="chip">Java</span><span class="chip">JavaFX</span><span class="chip">PostgreSQL</span><span class="chip">Sockets</span><span class="chip">Concurrency</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://github.com/yourusername/telegram-clone" target="_blank" rel="noopener">مشاهده در گیت‌هاب</a>
+            </div>
+          </article>
+
+          <article class="card col-6">
+            <h3>سیستم سفارش رستوران</h3>
+            <p>منو، سبد خرید، و جریان سفارش با UI جاوااف‌ایکس و PostgreSQL. شامل احراز هویت و رهگیری سفارش.</p>
+            <div class="chips">
+              <span class="chip">JavaFX</span><span class="chip">PostgreSQL</span><span class="chip">OOP</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://github.com/yourusername/restaurant-system" target="_blank" rel="noopener">مشاهده در گیت‌هاب</a>
+            </div>
+          </article>
+
+          <article class="card col-6">
+            <h3>پلتفرم موسیقی (مانند Genius)</h3>
+            <p>طراحی شی‌ءگرا با نقش‌های کاربر، هنرمند، ادمین؛ قابلیت متن آهنگ، دنبال‌کردن و فید؛ اسکلت بک‌اند جاوا.</p>
+            <div class="chips">
+              <span class="chip">Java</span><span class="chip">OOP</span><span class="chip">MVC</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://github.com/yourusername/music-platform" target="_blank" rel="noopener">مشاهده در گیت‌هاب</a>
+            </div>
+          </article>
+
+          <article class="card col-6">
+            <h3>تایپینگ تست (هم‌زمانی)</h3>
+            <p>تایمرهای تطبیقی، ورودی چندریسمانی، آمار لحظه‌ای و گزارش‌ها؛ استفاده از primitives هم‌زمانی جاوا.</p>
+            <div class="chips">
+              <span class="chip">Concurrency</span><span class="chip">Threads</span><span class="chip">Java</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://github.com/yourusername/typing-test" target="_blank" rel="noopener">مشاهده در گیت‌هاب</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills-fa" class="block" aria-label="مهارت‌ها">
+        <h2>مهارت‌ها</h2>
+        <div class="skills">
+          <span class="badge">Java</span><span class="badge">C++</span><span class="badge">Python</span>
+          <span class="badge">PostgreSQL</span><span class="badge">JavaFX</span><span class="badge">Git</span>
+          <span class="badge">Maven/Gradle</span><span class="badge">OOP</span><span class="badge">هم‌زمانی</span><span class="badge">شبکه</span>
+        </div>
+      </section>
+
+      <section id="about-fa" class="block" aria-label="درباره">
+        <h2>درباره</h2>
+        <p>
+          من دانشجوی کارشناسی علوم کامپیوتر (ترم سوم) در دانشگاه شهید بهشتی (ملی) هستم و روی سیستم‌های بلادرنگ و اپ‌های مقیاس‌پذیر تمرکز دارم.
+          به ساخت نرم‌افزارهای اثرگذار و یادگیری سیستم‌های توزیع‌شده، پایگاه‌داده‌ها و طراحی کاربرمحور علاقه‌مندم.
+        </p>
+      </section>
+
+      <section id="contact-fa" class="block" aria-label="ارتباط">
+        <h2>ارتباط</h2>
+        <p>ایمیل: <a href="mailto:roshanipartow@gmail.com">roshanipartow@gmail.com</a></p>
+        <p>لینکدین: <a href="https://www.linkedin.com/in/partow-roshani" target="_blank" rel="noopener">linkedin.com/in/partow-roshani</a></p>
+        <p>گیت‌هاب: <a href="https://github.com/PartowRoshani" target="_blank" rel="noopener">github.com/PartowRoshani</a></p>
+      </section>
     </div>
-
-    <div class="project-card">
-      <h4>Music Platform (Genius-like)</h4>
-      <p>Object-oriented project with users, artists, admins, and lyrics features.</p>
-      <a href="https://github.com/yourusername/music-platform" target="_blank">View on GitHub</a>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills">
-    <h3>Skills</h3>
-    <ul>
-      <li><strong>Programming:</strong> Java, C++, Python</li>
-      <li><strong>Databases:</strong> PostgreSQL, SQL</li>
-      <li><strong>Frameworks & Tools:</strong> JavaFX, Git, Maven/Gradle</li>
-      <li><strong>Concepts:</strong> OOP, Concurrency, Networking</li>
-    </ul>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <h3>Contact</h3>
-    <p>Email: <a href="mailto:roshanipartow@gmail.com">roshanipartow@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/partow-roshani" target="_blank">linkedin.com/in/partow-roshani</a></p>
-    <p>GitHub: <a href="https://github.com/PartowRoshani" target="_blank">github.com/PartowRoshani</a></p>
-  </section>
+  </main>
 
   <footer>
-    <p>© 2025 Partow Roshani</p>
+    © <span id="y"></span> Partow Roshani — All rights reserved.
   </footer>
 
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Theme toggle (auto → dark → light)
+    const root = document.documentElement;
+    const themeBtn = document.getElementById('themeBtn');
+    function applyTheme(mode) {
+      root.setAttribute('data-theme', mode);
+      themeBtn.textContent = mode[0].toUpperCase() + mode.slice(1);
+      localStorage.setItem('theme-pref', mode);
+    }
+    applyTheme(localStorage.getItem('theme-pref') || 'auto');
+    themeBtn.addEventListener('click', () => {
+      const cur = localStorage.getItem('theme-pref') || 'auto';
+      const next = cur === 'auto' ? 'dark' : cur === 'dark' ? 'light' : 'auto';
+      applyTheme(next);
+    });
+
+    // Language toggle (en ↔ fa)
+    const langBtn = document.getElementById('langBtn');
+    const en = document.getElementById('lang-en');
+    const fa = document.getElementById('lang-fa');
+
+    function applyLang(lang) {
+      if (lang === 'fa') {
+        fa.style.display = 'block';
+        en.style.display = 'none';
+        document.documentElement.setAttribute('lang', 'fa');
+        document.documentElement.setAttribute('dir', 'rtl');
+        langBtn.textContent = 'EN';
+      } else {
+        fa.style.display = 'none';
+        en.style.display = 'block';
+        document.documentElement.setAttribute('lang', 'en');
+        document.documentElement.setAttribute('dir', 'ltr');
+        langBtn.textContent = 'FA';
+      }
+      localStorage.setItem('lang-pref', lang);
+    }
+    applyLang(localStorage.getItem('lang-pref') || 'en');
+    langBtn.addEventListener('click', () => {
+      const cur = localStorage.getItem('lang-pref') || 'en';
+      applyLang(cur === 'en' ? 'fa' : 'en');
+    });
+  </script>
 </body>
 </html>
