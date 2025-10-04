@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Partow Roshani — Portfolio</title>
+
+  <!-- SEO -->
+  <meta name="description" content="CS student building real-time, scalable chat apps. Java, JavaFX, PostgreSQL, sockets, concurrency." />
+  <meta name="author" content="Partow Roshani" />
+  <meta property="og:title" content="Partow Roshani — Portfolio" />
+  <meta property="og:description" content="Real-time systems, scalable chat apps, JavaFX, PostgreSQL." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://partowroshani.github.io/portfolio/" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Partow Roshani</span>
+      </div>
+      <div class="nav-actions">
+        <button id="langBtn" class="btn" type="button" aria-label="Switch language">FA</button>
+        <button id="themeBtn" class="btn" type="button" aria-label="Toggle theme">Auto</button>
+        <a class="btn btn-primary" href="mailto:roshanipartow@gmail.com">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- ========== ENGLISH ========== -->
+    <div id="lang-en">
+      <section class="block">
+        <div class="hero">
+          <img class="avatar" src="assets/profile.jpg" alt="Profile photo" />
+          <div>
+            <h1>Computer Science Student @ Shahid Beheshti University (Melli)</h1>
+            <p class="subtitle">Building <strong>scalable chat applications</strong> & <strong>real-time systems</strong>. Java, JavaFX, PostgreSQL, sockets, concurrency.</p>
+            <div class="hero-ctas">
+              <a class="btn btn-primary" href="assets/PartowRoshani-Resume.pdf" target="_blank" rel="noopener">Download Resume (PDF)</a>
+              <a class="btn" href="https://github.com/PartowRoshani" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn" href="https://linkedin.com/in/partow-roshani" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="block" aria-label="Projects">
+        <h2>Projects</h2>
+        <div class="grid">
+          <article class="card col-6">
+            <h3>Telegram-Final-Project</h3>
+            <p>Client–server messaging app with custom JSON protocol, real-time dispatcher, groups/channels, roles, receipts, media, search/contacts, archived & saved chats; dark/light JavaFX UI.</p>
+            <div class="chips"><span class="chip">Java</span><span class="chip">JavaFX</span><span class="chip">PostgreSQL</span><span class="chip">Sockets</span><span class="chip">Concurrency</span></div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://github.com/PartowRoshani/Telegram-Final-Project" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </article>
+
+          <article class="card col-6">
+            <h3>Genius-like Music Platform</h3>
+            <p>Lyrics view/edit, follow artists to see new releases; search, charts, and seeded demo data to validate structure.</p>
+            <div class="chips"><span class="chip">Java</span><span class="chip">OOP</span><span class="chip">MVC</span></div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://github.com/PartowRoshani/Nowruz_Project" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </article>
+
+          <article class="card col-6">
+            <h3>Space Invaders (C++)</h3>
+            <p>Frame-based game loop, keyboard controls, collision detection, scoring; random enemy waves; ASCII rendering.</p>
+            <div class="chips"><span class="chip">C++</span><span class="chip">Game Loop</span></div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://github.com/PartowRoshani/BP_Project" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="block" aria-label="Skills">
+        <h2>Skills</h2>
+        <div class="skills">
+          <span class="badge">Java</span><span class="badge">C++</span><span class="badge">Python</span>
+          <span class="badge">PostgreSQL</span><span class="badge">JavaFX</span><span class="badge">Git</span>
+          <span class="badge">Maven/Gradle</span><span class="badge">OOP</span><span class="badge">Concurrency</span><span class="badge">Networking</span>
+        </div>
+      </section>
+
+      <!-- Achievements -->
+      <section id="achievements" class="block" aria-label="Achievements">
+        <h2>Achievements</h2>
+        <ul>
+          <li>Iran National University Entrance Exam (Konkur): Regional Rank <strong>198/41,279</strong>; National Rank <strong>2,742/147,317</strong>.</li>
+          <li>IELTS Academic <strong>5.5</strong>.</li>
+        </ul>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="block" aria-label="Contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:roshanipartow@gmail.com">roshanipartow@gmail.com</a> — LinkedIn: <a href="https://linkedin.com/in/partow-roshani" target="_blank">linkedin.com/in/partow-roshani</a> — GitHub: <a href="https://github.com/PartowRoshani" target="_blank">github.com/PartowRoshani</a></p>
+        <form id="contactForm" action="https://formspree.io/f/xwprprvo" method="POST">
+          <div style="display:grid;gap:10px;max-width:560px">
+            <input required name="name" placeholder="Your Name" />
+            <input required type="email" name="email" placeholder="Your Email" />
+            <textarea required name="message" rows="5" placeholder="Message..."></textarea>
+            <button class="btn btn-primary" type="submit">Send Message</button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <!-- ========== PERSIAN ========== -->
+    <div id="lang-fa" dir="rtl" style="display:none;">
+      <section class="block">
+        <div class="hero">
+          <div>
+            <h1>دانشجوی علوم کامپیوتر در دانشگاه شهید بهشتی (ملی)</h1>
+            <p class="subtitle">توسعه‌دهنده‌ی <strong>اپلیکیشن‌های چت مقیاس‌پذیر</strong> و <strong>سیستم‌های بلادرنگ</strong>. Java، JavaFX، PostgreSQL، سوکت و هم‌زمانی.</p>
+            <div class="hero-ctas">
+              <a class="btn btn-primary" href="assets/PartowRoshani-Resume.pdf" target="_blank" rel="noopener">دانلود رزومه (PDF)</a>
+              <a class="btn" href="https://github.com/PartowRoshani" target="_blank" rel="noopener">گیت‌هاب</a>
+              <a class="btn" href="https://linkedin.com/in/partow-roshani" target="_blank" rel="noopener">لینکدین</a>
+            </div>
+          </div>
+          <img class="avatar" src="assets/profile.jpg" alt="عکس پروفایل" />
+        </div>
+      </section>
+
+      <!-- پروژه‌ها -->
+      <section id="projects-fa" class="block" aria-label="پروژه‌ها">
+        <h2>پروژه‌ها</h2>
+        <div class="grid">
+          <article class="card col-6">
+            <h3>Telegram-Final-Project</h3>
+            <p>پیام‌رسان کلاینت–سرور با پروتکل JSON، دیسپچر بلادرنگ، گروه/کانال، نقش‌ها، رسید پیام، مدیا، جستجو/مخاطبین، چت‌های آرشیو/سیو شده؛ UI دارک/لایت JavaFX.</p>
+            <div class="chips"><span class="chip">Java</span><span class="chip">JavaFX</span><span class="chip">PostgreSQL</span><span class="chip">Sockets</span><span class="chip">Concurrency</span></div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://github.com/PartowRoshani/Telegram-Final-Project" target="_blank" rel="noopener">مشاهده در گیت‌هاب</a>
+            </div>
+          </article>
+
+          <article class="card col-6">
+            <h3>پلتفرم موسیقی (مانند Genius)</h3>
+            <p>نمایش/ویرایش متن آهنگ، دنبال‌کردن هنرمند و مشاهده‌ی ریلیزهای جدید؛ جستجو، نمودارها و دیتای نمونه برای اعتبارسنجی ساختار.</p>
+            <div class="chips"><span class="chip">Java</span><span class="chip">OOP</span><span class="chip">MVC</span></div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://github.com/PartowRoshani/Nowruz_Project" target="_blank" rel="noopener">مشاهده در گیت‌هاب</a>
+            </div>
+          </article>
+
+          <article class="card col-6">
+            <h3>Space Invaders (C++)</h3>
+            <p>حلقه‌ی بازی فریم‌بیس، کنترل صفحه‌کلید، برخورد و امتیاز؛ موج‌های تصادفی دشمن؛ رندر ASCII سبک.</p>
+            <div class="chips"><span class="chip">C++</span><span class="chip">Game Loop</span></div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://github.com/PartowRoshani/BP_Project" target="_blank" rel="noopener">مشاهده در گیت‌هاب</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- مهارت‌ها -->
+      <section id="skills-fa" class="block" aria-label="مهارت‌ها">
+        <h2>مهارت‌ها</h2>
+        <div class="skills">
+          <span class="badge">Java</span><span class="badge">C++</span><span class="badge">Python</span>
+          <span class="badge">PostgreSQL</span><span class="badge">JavaFX</span><span class="badge">Git</span>
+          <span class="badge">Maven/Gradle</span><span class="badge">OOP</span><span class="badge">هم‌زمانی</span><span class="badge">شبکه</span>
+        </div>
+      </section>
+
+      <!-- دستاوردها -->
+      <section id="achievements-fa" class="block" aria-label="دستاوردها">
+        <h2>دستاوردها</h2>
+        <ul>
+          <li>کنکور سراسری: رتبه منطقه <strong>198/41,279</strong>؛ رتبه کشوری <strong>2,742/147,317</strong>.</li>
+          <li>IELTS Academic <strong>5.5</strong>.</li>
+        </ul>
+      </section>
+
+      <!-- ارتباط -->
+      <section id="contact-fa" class="block" aria-label="ارتباط">
+        <h2>ارتباط</h2>
+        <p>ایمیل: <a href="mailto:roshanipartow@gmail.com">roshanipartow@gmail.com</a> — لینکدین: <a href="https://linkedin.com/in/partow-roshani" target="_blank">linkedin.com/in/partow-roshani</a> — گیت‌هاب: <a href="https://github.com/PartowRoshani" target="_blank">github.com/PartowRoshani</a></p>
+        <form id="contactFormFa" action="https://formspree.io/f/xwprprvo" method="POST">
+          <div style="display:grid;gap:10px;max-width:560px">
+            <input required name="name" placeholder="نام شما" />
+            <input required type="email" name="email" placeholder="ایمیل شما" />
+            <textarea required name="message" rows="5" placeholder="پیام..."></textarea>
+            <button class="btn btn-primary" type="submit">ارسال پیام</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer>© <span id="y"></span> Partow Roshani — All rights reserved.</footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
