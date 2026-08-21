@@ -1,7 +1,241 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Deep Image Restoration — Partow Roshani</title><link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="../portfolio-v2-enhancements.css"></head><body><div class="ambient ambient-one"></div>
-<header class="site-header"><div class="shell nav-wrap">
-<a class="brand" href="../index.html"><span class="brand-mark">P.</span><span class="brand-name">Partow Roshani</span></a>
-<nav class="desktop-nav"><a class="" href="../index.html">Home</a><a class="" href="../work.html">Work</a><a class="" href="../experience.html">Experience</a><a class="" href="../about.html">About</a><a class="" href="../contact.html">Contact</a></nav>
-<div class="nav-actions"><button id="themeBtn" class="icon-btn" type="button" aria-label="Toggle theme">☾</button><a class="button button-small" href="../assets/PartowRoshani-Resume.pdf" target="_blank">Resume ↗</a></div>
-</div></header><main><section class="shell page-hero reveal"><p class="eyebrow">Digital Image Processing · DEEP LEARNING</p><h1>Deep Image Restoration</h1><p class="lede">Denoising, deblurring, architecture comparison, and semantic image classification.</p><div class="case-meta"><div><span>Role</span>Digital Image Processing</div><div><span>Year</span>2026</div><div><span>Dataset</span>CIFAR-10</div><div><span>Stack</span>PyTorch · TensorFlow</div></div></section><section class="shell"><img class="case-hero-image reveal" src="../assets/projects/image-restoration/architecture-comparison.png" alt="Deep Image Restoration"></section><section class="shell case-section reveal"><h2>Restoration pipeline</h2><p>The project compares denoising and deblurring approaches, evaluates CNN, ResNet and U-Net variants, and uses quantitative metrics such as PSNR alongside visual inspection.</p><div class="case-grid"><img src="../assets/projects/image-restoration/input-groundtruth.png"><img src="../assets/projects/image-restoration/phase1-comparison.png"><img src="../assets/projects/image-restoration/architecture-comparison.png"><img src="../assets/projects/image-restoration/training-metrics.png"><img src="../assets/projects/image-restoration/confusion-matrix.png"></div></section>
-<section class="shell case-section reveal"><h2>Classification</h2><p>A PreActResNet18 classifier was trained on CIFAR-10, reaching 87.11% test accuracy and a 0.8897 validation macro F1 score.</p></section></main><footer class="site-footer"><div class="shell footer-grid"><div><span class="brand-mark">P.</span><p>Computer Science · Machine Learning · Software Engineering</p></div><div class="footer-links"><a href="../work.html">Work</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></div><div class="footer-copy">© <span id="year"></span> Partow Roshani</div></div></footer><script src="../script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Deep Image Restoration — Partow Roshani</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../portfolio-v2-enhancements.css">
+</head>
+
+<body>
+
+<div class="ambient ambient-one"></div>
+
+<header class="site-header">
+
+    <div class="shell nav-wrap">
+
+        <a class="brand" href="../index.html">
+            <span class="brand-mark">P.</span>
+            <span class="brand-name">Partow Roshani</span>
+        </a>
+
+        <nav class="desktop-nav">
+            <a href="../index.html">Home</a>
+            <a href="../work.html">Work</a>
+            <a href="../experience.html">Experience</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <button
+                id="themeBtn"
+                class="icon-btn"
+                type="button"
+                aria-label="Toggle theme"
+            >
+                ☾
+            </button>
+
+            <a
+                class="button button-small"
+                href="../assets/PartowRoshani-Resume.pdf"
+                target="_blank"
+            >
+                Resume ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="shell page-hero reveal">
+
+        <p class="eyebrow">
+            DIGITAL IMAGE PROCESSING · DEEP LEARNING
+        </p>
+
+        <h1>
+            Deep Image Restoration
+        </h1>
+
+        <p class="lede">
+            Denoising, deblurring, architecture comparison,
+            and semantic image classification.
+        </p>
+
+
+        <div class="case-meta">
+
+            <div>
+                <span>Role</span>
+                Digital Image Processing
+            </div>
+
+            <div>
+                <span>Year</span>
+                2026
+            </div>
+
+            <div>
+                <span>Dataset</span>
+                CIFAR-10
+            </div>
+
+            <div>
+                <span>Stack</span>
+                PyTorch · TensorFlow
+            </div>
+
+        </div>
+
+
+        <div class="case-actions">
+
+            <a
+                class="button button-primary"
+                href="https://github.com/PartowRoshani/deep-image-restoration-classification"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                View source on GitHub ↗
+            </a>
+
+            <a
+                class="button"
+                href="../work.html"
+            >
+                Back to work
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <section class="shell">
+
+        <img
+            class="case-hero-image reveal"
+            src="../assets/projects/image-restoration/architecture-comparison.png"
+            alt="Deep Image Restoration architecture comparison"
+        >
+
+    </section>
+
+
+    <section class="shell case-section reveal">
+
+        <h2>
+            Restoration pipeline
+        </h2>
+
+        <p>
+            The project compares denoising and deblurring approaches,
+            evaluates CNN, ResNet and U-Net variants, and uses quantitative
+            metrics such as PSNR alongside visual inspection.
+        </p>
+
+        <div class="case-grid">
+
+            <img
+                src="../assets/projects/image-restoration/input-groundtruth.png"
+                alt="Image restoration input and ground truth"
+            >
+
+            <img
+                src="../assets/projects/image-restoration/phase1-comparison.png"
+                alt="Denoising and deblurring comparison"
+            >
+
+            <img
+                src="../assets/projects/image-restoration/architecture-comparison.png"
+                alt="Deep learning architecture comparison"
+            >
+
+            <img
+                src="../assets/projects/image-restoration/training-metrics.png"
+                alt="Training metrics"
+            >
+
+            <img
+                src="../assets/projects/image-restoration/confusion-matrix.png"
+                alt="CIFAR-10 confusion matrix"
+            >
+
+        </div>
+
+    </section>
+
+
+    <section class="shell case-section reveal">
+
+        <h2>
+            Classification
+        </h2>
+
+        <p>
+            A PreActResNet18 classifier was trained on CIFAR-10,
+            reaching 87.11% test accuracy and a 0.8897 validation
+            macro F1 score.
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="shell footer-grid">
+
+        <div>
+
+            <span class="brand-mark">P.</span>
+
+            <p>
+                Computer Science · Machine Learning · Software Engineering
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="../work.html">
+                Work
+            </a>
+
+            <a href="../about.html">
+                About
+            </a>
+
+            <a href="../contact.html">
+                Contact
+            </a>
+
+        </div>
+
+        <div class="footer-copy">
+            © <span id="year"></span> Partow Roshani
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="../script.js"></script>
+
+</body>
+</html>
