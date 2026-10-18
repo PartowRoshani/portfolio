@@ -1,18 +1,30 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
     <title>Work — Partow Roshani</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="portfolio-v2-enhancements.css">
 </head>
+
 <body>
+
 <div class="ambient ambient-one"></div>
 <div class="grid-noise"></div>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header class="site-header">
+
     <div class="shell nav-wrap">
+
         <a class="brand" href="index.html">
             <span class="brand-mark"></span>
             <span class="brand-name">Partow Roshani</span>
@@ -27,141 +39,384 @@
         </nav>
 
         <div class="nav-actions">
-            <button id="themeBtn" class="icon-btn" type="button" aria-label="Toggle theme">☾</button>
-            <a class="button button-small" href="assets/PartowRoshani-Resume.pdf" target="_blank">Resume ↗</a>
+
+            <button
+                id="themeBtn"
+                class="icon-btn"
+                type="button"
+                aria-label="Toggle theme"
+            >
+                ☾
+            </button>
+
+            <a
+                class="button button-small"
+                href="assets/PartowRoshani-Resume.pdf"
+                target="_blank"
+            >
+                Resume ↗
+            </a>
+
         </div>
+
     </div>
+
 </header>
 
+
 <main>
-    <section class="shell page-hero reveal">
-        <p class="eyebrow">SELECTED WORK</p>
-        <h1>Ideas turned into <span class="gradient-text">systems.</span></h1>
-        <p class="lede">Machine learning, computer vision, graph algorithms, data science, and software projects.</p>
-    </section>
 
-    <section class="shell section">
-        <div class="work-grid">
 
-            <a class="project-card reveal" href="projects/jet-engine-hospital.html">
-                <div class="project-meta">
-                    <span>01</span>
-                    <span>ML</span>
+<!-- =========================
+     PAGE HERO
+========================= -->
+
+<section class="shell page-hero reveal">
+
+    <p class="eyebrow">
+        SELECTED WORK
+    </p>
+
+    <h1>
+        Ideas turned into
+        <span class="gradient-text">
+            systems.
+        </span>
+    </h1>
+
+    <p class="lede">
+        Machine learning, digital image processing, graph algorithms,
+        data science, and software projects.
+    </p>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section class="shell section">
+
+    <div class="work-grid">
+
+
+        <!-- =========================
+             01 — JET ENGINE HOSPITAL
+        ========================= -->
+
+        <a
+            class="project-card reveal"
+            href="projects/jet-engine-hospital.html"
+        >
+
+            <div class="project-meta">
+
+                <span>01</span>
+                <span>Machine Learning</span>
+
+            </div>
+
+
+            <div
+                class="project-visual project-visual-image"
+                style="
+                    height:300px;
+                    margin:24px 0;
+                    overflow:hidden;
+                    background:#090c15;
+                    border-radius:22px;
+                "
+            >
+
+                <img
+                    src="assets/projects/jet-engine/card-visual.png"
+                    alt="Jet Engine Hospital predictive maintenance visual"
+                    style="
+                        width:100%;
+                        height:100%;
+                        object-fit:cover;
+                        display:block;
+                        border-radius:inherit;
+                    "
+                >
+
+            </div>
+
+
+            <div class="project-copy">
+
+                <h3>
+                    Jet Engine Hospital
+                </h3>
+
+                <p>
+                    Predictive maintenance for NASA C-MAPSS engines.
+                </p>
+
+                <div class="tags">
+
+                    <span>Python</span>
+                    <span>Scikit-learn</span>
+                    <span>Streamlit</span>
+
                 </div>
 
-                <div class="project-visual project-visual-image" style="height:300px;margin:24px 0;overflow:hidden;background:#090c15;border-radius:22px;">
-                    <img
-                        src="assets/projects/jet-engine/card-visual.png"
-                        alt="Jet Engine Hospital predictive maintenance visual"
-                        style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;"
-                    >
+            </div>
+
+        </a>
+
+
+        <!-- =========================
+             02 — DEEP IMAGE RESTORATION
+        ========================= -->
+
+        <a
+            class="project-card reveal"
+            href="projects/deep-image-restoration.html"
+        >
+
+            <div class="project-meta">
+
+                <span>02</span>
+                <span>Digital Image Processing</span>
+
+            </div>
+
+
+            <div
+                class="project-visual project-visual-image"
+                style="
+                    height:300px;
+                    margin:24px 0;
+                    overflow:hidden;
+                    background:#090c15;
+                    border-radius:22px;
+                "
+            >
+
+                <img
+                    src="assets/projects/image-restoration/card-visual.png"
+                    alt="Deep Image Restoration before and after visual"
+                    style="
+                        width:100%;
+                        height:100%;
+                        object-fit:cover;
+                        display:block;
+                        border-radius:inherit;
+                    "
+                >
+
+            </div>
+
+
+            <div class="project-copy">
+
+                <h3>
+                    Deep Image Restoration
+                </h3>
+
+                <p>
+                    Denoising, deblurring and CIFAR-10 classification.
+                </p>
+
+                <div class="tags">
+
+                    <span>PyTorch</span>
+                    <span>TensorFlow</span>
+                    <span>ResNet</span>
+
                 </div>
 
-                <div class="project-copy">
-                    <h3>Jet Engine Hospital</h3>
-                    <p>Predictive maintenance for NASA C-MAPSS engines.</p>
-                    <div class="tags">
-                        <span>Python</span>
-                        <span>Scikit-learn</span>
-                        <span>Streamlit</span>
-                    </div>
-                </div>
-            </a>
+            </div>
 
-            <a class="project-card reveal" href="projects/deep-image-restoration.html">
-                <div class="project-meta">
-                    <span>02</span>
-                    <span>Computer Vision</span>
-                </div>
+        </a>
 
-                <div class="project-visual project-visual-image" style="height:300px;margin:24px 0;overflow:hidden;background:#090c15;border-radius:22px;">
-                    <img
-                        src="assets/projects/image-restoration/card-visual.png"
-                        alt="Deep Image Restoration before and after visual"
-                        style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;"
-                    >
-                </div>
 
-                <div class="project-copy">
-                    <h3>Deep Image Restoration</h3>
-                    <p>Denoising, deblurring and CIFAR-10 classification.</p>
-                    <div class="tags">
-                        <span>PyTorch</span>
-                        <span>TensorFlow</span>
-                        <span>ResNet</span>
-                    </div>
-                </div>
-            </a>
+        <!-- =========================
+             03 — FRAUD DETECTION
+        ========================= -->
 
-            <a class="project-card reveal" href="projects/fraud-detection-ppr.html">
-                <div class="project-meta">
-                    <span>03</span>
-                    <span>Algorithms</span>
-                </div>
+        <a
+            class="project-card reveal"
+            href="projects/fraud-detection-ppr.html"
+        >
 
-                <div class="project-visual project-visual-image" style="height:300px;margin:24px 0;overflow:hidden;background:#090c15;border-radius:22px;">
-                    <img
-                        src="assets/projects/fraud-ppr/card-visual.png"
-                        alt="Fraud Detection with PPR graph-based analytics visual"
-                        style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;"
-                    >
-                </div>
+            <div class="project-meta">
 
-                <div class="project-copy">
-                    <h3>Fraud Detection with PPR</h3>
-                    <p>Graph-based fraud detection using Personalized PageRank.</p>
-                    <div class="tags">
-                        <span>C++17</span>
-                        <span>Graphs</span>
-                        <span>Precision@K</span>
-                    </div>
-                </div>
-            </a>
+                <span>03</span>
+                <span>Algorithms</span>
 
-            <a class="project-card reveal" href="projects/telegram-clone.html">
-                <div class="project-meta">
-                    <span>04</span>
-                    <span>Software</span>
-                </div>
+            </div>
 
-                <div class="project-visual project-visual-image" style="height:300px;margin:24px 0;overflow:hidden;background:#090c15;border-radius:22px;">
-                    <img
-                        src="assets/projects/telegram/card-visual.png"
-                        alt="Telegram Clone software architecture visual"
-                        style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;"
-                    >
+
+            <div
+                class="project-visual project-visual-image"
+                style="
+                    height:300px;
+                    margin:24px 0;
+                    overflow:hidden;
+                    background:#090c15;
+                    border-radius:22px;
+                "
+            >
+
+                <img
+                    src="assets/projects/fraud-ppr/card-visual.png"
+                    alt="Fraud Detection with PPR graph-based analytics visual"
+                    style="
+                        width:100%;
+                        height:100%;
+                        object-fit:cover;
+                        display:block;
+                        border-radius:inherit;
+                    "
+                >
+
+            </div>
+
+
+            <div class="project-copy">
+
+                <h3>
+                    Fraud Detection with PPR
+                </h3>
+
+                <p>
+                    Graph-based fraud detection using Personalized PageRank.
+                </p>
+
+                <div class="tags">
+
+                    <span>C++17</span>
+                    <span>Graphs</span>
+                    <span>Precision@K</span>
+
                 </div>
 
-                <div class="project-copy">
-                    <h3>Telegram Clone</h3>
-                    <p>Real-time client-server messaging application with Java, JavaFX, PostgreSQL, sockets and multithreading.</p>
-                    <div class="tags">
-                        <span>Java</span>
-                        <span>JavaFX</span>
-                        <span>PostgreSQL</span>
-                    </div>
-                </div>
-            </a>
+            </div>
 
-        </div>
-    </section>
+        </a>
+
+
+        <!-- =========================
+             04 — TELEGRAM CLONE
+        ========================= -->
+
+        <a
+            class="project-card reveal"
+            href="projects/telegram-clone.html"
+        >
+
+            <div class="project-meta">
+
+                <span>04</span>
+                <span>Software Engineering</span>
+
+            </div>
+
+
+            <div
+                class="project-visual project-visual-image"
+                style="
+                    height:300px;
+                    margin:24px 0;
+                    overflow:hidden;
+                    background:#090c15;
+                    border-radius:22px;
+                "
+            >
+
+                <img
+                    src="assets/projects/telegram/card-visual.png"
+                    alt="Telegram Clone software architecture visual"
+                    style="
+                        width:100%;
+                        height:100%;
+                        object-fit:cover;
+                        display:block;
+                        border-radius:inherit;
+                    "
+                >
+
+            </div>
+
+
+            <div class="project-copy">
+
+                <h3>
+                    Telegram Clone
+                </h3>
+
+                <p>
+                    Real-time client-server messaging application with
+                    Java, JavaFX, PostgreSQL, sockets and multithreading.
+                </p>
+
+                <div class="tags">
+
+                    <span>Java</span>
+                    <span>JavaFX</span>
+                    <span>PostgreSQL</span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
 </main>
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer class="site-footer">
+
     <div class="shell footer-grid">
+
         <div>
+
             <span class="brand-mark"></span>
-            <p>Computer Science · Machine Learning · Software Engineering</p>
+
+            <p>
+                Computer Science · Machine Learning · Software Engineering
+            </p>
+
         </div>
+
         <div class="footer-links">
-            <a href="work.html">Work</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
+
+            <a href="work.html">
+                Work
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
         </div>
-        <div class="footer-copy">© <span id="year"></span> Partow Roshani</div>
+
+        <div class="footer-copy">
+            © <span id="year"></span> Partow Roshani
+        </div>
+
     </div>
+
 </footer>
 
+
 <script src="script.js"></script>
+
 </body>
 </html>
